@@ -105,7 +105,53 @@ namespace Middle_Armeria_PDV
             return precio;
         }//consultar precio por id
 
+        public Producto consultarPorCodBarras(string codBarras)
+        {
+            Producto prodResultado = new Producto();
+            List<object[]> res = this.bd.consulta("equipamiento", "cod_barras=" + codBarras);
+            //validamos que traiga un elemento la lista
+            if (res.Count == 1)
+            {
+                Tipo tipoTexto;
+                object[] tempo = res[0];
+                precio = int.Parse(tempo[3].ToString());
+                prodResultado.id = int.Parse(tempo[0].ToString());
+                prodResultado.nombre = tempo[1].ToString();
+                prodResultado.precio = int.Parse(tempo[2].ToString());
+                prodResultado.cod_barras = tempo[3].ToString();
+                prodResultado.imagen = tempo[4].ToString();
 
+                switch(tempo[5].ToString())
+                {
+                    case "ESPADA":
+                        tipoTexto = Tipo.ESPADA;
+                        break;
+                    case "HACHA":
+                        tipoTexto = Tipo.HACHA;
+                        break;
+                    case "LANZA":
+                        tipoTexto = Tipo.LANZA;
+                        break;
+                    case "ESCUDO":
+                        tipoTexto = Tipo.ESCUDO;
+                        break;
+                    case "ARMADURA":
+                        tipoTexto = Tipo.ARMADURA;
+                        break;
+                    default:
+                        tipoTexto= Tipo.ESPADA;
+                        break;
+                }
+                prodResultado.tipo = tipoTexto;
+            }
+            else
+            {
+                Producto.msgError = "Código de barras no existe en catalogo de productos."+this.bd.msgError;
+                prodResultado = null;
+            }
+
+            return prodResultado;
+        }//consultar producto por cod barras.
 
     }
 }

@@ -1,0 +1,5 @@
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.csproj.AssemblyReference.cache
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.AssemblyInfoInputs.cache
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.AssemblyInfo.cs
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.csproj.CoreCompileInputs.cache
