@@ -3,3 +3,10 @@ C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\obj\Debug\net6
 C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.AssemblyInfoInputs.cache
 C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.AssemblyInfo.cs
 C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.csproj.CoreCompileInputs.cache
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\bin\Debug\net6.0\Back_CRUDs_BD.deps.json
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\bin\Debug\net6.0\Back_CRUDs_BD.dll
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\bin\Debug\net6.0\Back_CRUDs_BD.pdb
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.dll
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\obj\Debug\net6.0\refint\Back_CRUDs_BD.dll
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\obj\Debug\net6.0\Back_CRUDs_BD.pdb
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Back_CRUDs_BD\obj\Debug\net6.0\ref\Back_CRUDs_BD.dll

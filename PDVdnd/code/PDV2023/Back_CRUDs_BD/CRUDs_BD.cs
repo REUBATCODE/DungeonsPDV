@@ -37,5 +37,7 @@ namespace Back_CRUDs_BD
         public abstract bool borrar(string tabla, int id);
         public abstract List<object[]> consulta(string tabla);
         public abstract List<object[]> consulta(string tabla, string criterioBusqueda);
+
+        public abstract object consulta1SoloValor(string campo, string tabla, string criterioBusqueda);
     }
 }

@@ -31,37 +31,34 @@ namespace Back_CRUDs_BD
             {
                 //abrir una conexión
                 if (con.State == System.Data.ConnectionState.Closed)
+                {
                     con.Open();
-                //se concatenan todos los campos
-                string camposConcat = "";
-                foreach (var campo in campos)
-                {
-                    camposConcat += campo + ",";
-                }
-                //Quitar la coma****
-                camposConcat = camposConcat.Remove(camposConcat.Length - 1);
-                string valsConcat = "";
-                //Concatenamos los valores
-                foreach (ValoresAInsertar valor in valores)
-                {
-                    if(valor.llevaApostrofes)
+                    //se concatenan todos los campos
+                    string camposConcat = "";
+                    foreach (var campo in campos)
                     {
-                        valsConcat += "'" + valor + "',";
+                        camposConcat += campo + ",";
                     }
-                    else
+                    //Quitar la coma****
+                    camposConcat = camposConcat.Remove(camposConcat.Length - 1);
+                    string valsConcat = "";
+                    //Concatenamos los valores
+                    for (int i = 0; i < valores.Count; i++)
                     {
-                        valsConcat += valor + ",";
+                        //concatenar un nombreDeCampo = valor (con sus '')
+                        valsConcat += (valores[i].llevaApostrofes ? "'" + valores[i].valor + "'," : valores[i].valor + ",");
                     }
-                }
-                //definir el query en el MysqlCommand
-                comando = new MySqlCommand($"INSERT INTO {tabla} ({camposConcat}) VALUES({valsConcat})");
-                //relacionar el command con la conexión
-                comando.Connection = con;
-                //ejecutar el query****
-                int res = comando.ExecuteNonQuery();
-                //validar que se ejecutó correctamente
-                if (res == 1)
-                    resultado = true;
+                    valsConcat = valsConcat.Remove(valsConcat.Length - 1);
+                    //definir el query en el MysqlCommand
+                    comando = new MySqlCommand($"INSERT INTO {tabla} ({camposConcat}) VALUES({valsConcat});");
+                    //relacionar el command con la conexión
+                    comando.Connection = con;
+                    //ejecutar el query****
+                    int res = comando.ExecuteNonQuery();
+                    //validar que se ejecutó correctamente
+                    if (res == 1)
+                        resultado = true;
+                }    
                 else
                 {
                     resultado = false;
@@ -131,6 +128,7 @@ namespace Back_CRUDs_BD
                 if(con.State == System.Data.ConnectionState.Open)
                     con.Close();
             }
+            return resultado;
         }
 
         public override bool borrar(string tabla, int id)
@@ -162,10 +160,10 @@ namespace Back_CRUDs_BD
                 if(con.State == System.Data.ConnectionState.Open)
                     con.Close();
             }
-         
+            return resultado;
         }
 
-        public override object consulta(string tabla)
+        public override List<object[]> consulta(string tabla)
         {
             List<object[]> resultado = new List<object[]>();
             //hacer el bloque trycatch.
@@ -226,6 +224,8 @@ namespace Back_CRUDs_BD
                     con.Open();
                 //establecer el query---> select * from table
                 comando = new MySqlCommand($"SELECT * FROM {tabla} WHERE {criterioBusqueda}");
+                //relacionar la conexion al command
+                comando.Connection = con;
                 //ejecutar el query
                 dr = comando.ExecuteReader();
                 //validar el resultado de la query
@@ -246,6 +246,49 @@ namespace Back_CRUDs_BD
                 {
                     this.msgError = $"No existen registros en la tabla {tabla}";
                     resultado = new List<object[]>();
+                }
+            }
+            catch (MySqlException mex)
+            {
+                this.msgError = "No se pudo hacer la consulta en el servidor." + mex.Message;
+            }
+            catch (Exception ex)
+            {
+                this.msgError = "No se pudo hacer la consulta por fallo de Windows." + ex.Message;
+            }
+            finally
+            {
+                if (con.State == System.Data.ConnectionState.Open) con.Close();
+            }
+
+            return resultado;
+        }
+
+            public override object consulta1SoloValor(string campo, string tabla, string criterioBusqueda)
+            {
+                object resultado = new object();
+                int correcto = 0;
+            //hacer el bloque trycatch.
+            try
+            {
+                //validar conexion
+                if (con.State == System.Data.ConnectionState.Closed)
+                    con.Open();
+                    //establecer el query---> select * from table
+                    comando = new MySqlCommand($"SELECT * FROM {tabla} WHERE {criterioBusqueda}");
+                    //relacionar la conexion al command
+                    comando.Connection = con;
+                    //ejecutar el query
+                    resultado = comando.ExecuteScalar();                
+                    //validar el resultado de la query
+                if (resultado!=null)
+                {
+                        correcto = 1;
+                }
+                else
+                {
+                    this.msgError = $"No existen registros en la tabla {tabla}";
+                        resultado = null;
                 }
             }
             catch (MySqlException mex)
