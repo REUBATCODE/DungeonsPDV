@@ -3,3 +3,13 @@ C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug
 C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.AssemblyInfoInputs.cache
 C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.AssemblyInfo.cs
 C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.csproj.CoreCompileInputs.cache
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\bin\Debug\net6.0\Middle_Armeria_PDV.deps.json
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\bin\Debug\net6.0\Middle_Armeria_PDV.dll
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\bin\Debug\net6.0\Middle_Armeria_PDV.pdb
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\bin\Debug\net6.0\Back_CRUDs_BD.dll
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\bin\Debug\net6.0\Back_CRUDs_BD.pdb
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.csproj.CopyComplete
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.dll
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\refint\Middle_Armeria_PDV.dll
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\Middle_Armeria_PDV.pdb
+C:\Users\Ruben\Desktop\POO_2023\PDVdnd\code\PDV2023\Middle_Armeria_PDV\obj\Debug\net6.0\ref\Middle_Armeria_PDV.dll

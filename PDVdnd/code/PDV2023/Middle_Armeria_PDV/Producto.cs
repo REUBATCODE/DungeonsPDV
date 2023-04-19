@@ -30,15 +30,14 @@ namespace Middle_Armeria_PDV
             bd = new Back_CRUDs_BD.MySql("localhost", "root", "", "dnd_armeria");
         }
         //---MÉTODOS---//
-        public bool crear(string nom, string desc, int precio, string cod_barras, string imagen, Tipo tipo)
+        public bool crear(string nom, int precio, string cod_barras, string imagen, Tipo tipo)
         {
             List<string> nombresCampos = new List<string>()
             {
-                "nombre", "descripcion", "precio", "cod_barras", "imagen", "tipo"
+                "nombre", "precio", "cod_barras", "imagen", "tipo"
             };
             List<ValoresAInsertar> vals = new List<ValoresAInsertar>();
             vals.Add(new ValoresAInsertar(nom));
-            vals.Add(new ValoresAInsertar(desc));
             vals.Add(new ValoresAInsertar(precio.ToString(), false));
             vals.Add(new ValoresAInsertar(cod_barras));
             vals.Add(new ValoresAInsertar(imagen));
@@ -52,15 +51,14 @@ namespace Middle_Armeria_PDV
             return resultado;
         }//crear
 
-        public bool modificar(string nom, string desc, int precio, string cod_barras, string imagen, Tipo tipo, int id)
+        public bool modificar(string nom, int precio, string cod_barras, string imagen, Tipo tipo, int id)
         {
             List<string> nombresCampos = new List<string>()
             {
-                "nombre", "descripcion", "precio", "cod_barras", "imagen", "tipo"
+                "nombre", "precio", "cod_barras", "imagen", "tipo"
             };
             List<ValoresAInsertar> vals = new List<ValoresAInsertar>();
             vals.Add(new ValoresAInsertar(nom));
-            vals.Add(new ValoresAInsertar(desc));
             vals.Add(new ValoresAInsertar(precio.ToString(), false));
             vals.Add(new ValoresAInsertar(cod_barras));
             vals.Add(new ValoresAInsertar(imagen));
@@ -114,7 +112,6 @@ namespace Middle_Armeria_PDV
             {
                 Tipo tipoTexto;
                 object[] tempo = res[0];
-                precio = int.Parse(tempo[3].ToString());
                 prodResultado.id = int.Parse(tempo[0].ToString());
                 prodResultado.nombre = tempo[1].ToString();
                 prodResultado.precio = int.Parse(tempo[2].ToString());
